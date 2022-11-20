@@ -1,9 +1,15 @@
-<%= form_for Produto.new do |form| %>
+<% @produto.errors.full_messages.each do |msg| %>
+<div class="alert alert-danger" role="alert">
+    <%= msg %>
+</div>
+<% end %>
+
+<%= form_for @produto do |form| %>
 
 <div class="row">
     <div class="col-sm-4">
         <div class="form-group">
-            <%= form.label :nome %> 
+            <%= form.label :nome %>
             <%= form.text_field :nome, class:"form-control" %>
         </div>
     </div>
